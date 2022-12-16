@@ -27,10 +27,10 @@ public class Start {
 
             s.executeUpdate(sql);
 
-            s.execute("INSERT INTO newdb.student (last_name, first_name) VALUES('De Fenzo', 'Marco');");
-            s.execute("INSERT INTO newdb.student (last_name, first_name) VALUES('Vassarotti', 'Vittoria');");
-            s.execute("INSERT INTO newdb.student (last_name, first_name) VALUES('Di Leo', 'Luca');");
-            s.execute("INSERT INTO newdb.student (last_name, first_name) VALUES('Mustata', 'Alina Elena');");
+            s.executeUpdate("INSERT INTO newdb.student (last_name, first_name) VALUES('De Fenzo', 'Marco');");
+            s.executeUpdate("INSERT INTO newdb.student (last_name, first_name) VALUES('Vassarotti', 'Vittoria');");
+            s.executeUpdate("INSERT INTO newdb.student (last_name, first_name) VALUES('Di Leo', 'Luca');");
+            s.executeUpdate("INSERT INTO newdb.student (last_name, first_name) VALUES('Mustata', 'Alina Elena');");
 
 
         }catch(SQLException e) {
@@ -38,8 +38,9 @@ public class Start {
 
         } finally {
             try{
-                if(con != null)
+                if(con != null){
                     con.close();
+                }
             }catch(SQLException ex){
                 System.out.println(ex.getMessage());
             }
